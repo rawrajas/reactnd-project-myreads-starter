@@ -7,7 +7,7 @@ import MainPage from "./MainPage";
 class BooksApp extends React.Component {
     state ={
         books: []
-    };
+    }
 
     componentDidMount(){
         BooksAPI.getAll()
@@ -17,7 +17,11 @@ class BooksApp extends React.Component {
     }
   render() {
     return (
-         <MainPage />
+        <div className='app'>
+         <MainPage
+         books ={this.state.books}
+         />
+        </div>
     )
   }
 }
