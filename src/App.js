@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import SearchPage from "./SearchPage";
 import MainPage from "./MainPage";
+import { BrowserRouter} from 'react-router-dom';
 
 class BooksApp extends React.Component {
     state ={
@@ -26,11 +27,13 @@ BooksAPI.getAll()
   render() {
     return (
         <div className='app'>
-            {/*<MainPage
+            <MainPage
          books ={this.state.books}
          moveShelf={this.moveShelf}
-         />*/}
-         <SearchPage />
+         />
+         /*<SearchPage
+         moveShelf={this.moveShelf}
+         />*/
         </div>
     )
   }
