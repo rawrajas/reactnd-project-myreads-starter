@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 class Book extends Component{
+
     render () {
+
         let displayedThumbnail= this.props.book.imageLinks ?
             this.props.book.imageLinks.thumbnail : '';
         return(
@@ -26,7 +28,7 @@ class Book extends Component{
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
                             <option value="read">Read</option>
-                            <option value="none">None</option>
+                            <option selected value="none">None</option>
                         </select>
                     </div>
                 </div>
