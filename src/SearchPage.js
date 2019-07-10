@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 class SearchPage extends Component{
     state={
         query:'',
-        searchedBooks:[]
+        searchedBooks:[],
+        errorMessage: ''
     }
 
     updateQuery = (query) =>{
@@ -21,9 +22,14 @@ class SearchPage extends Component{
             BooksAPI.search(query)
                 .then((searchedBooks) =>{
                     if (searchedBooks.error){
-                        this.setState({ searchedBooks: [] });
+                        this.setState({ searchedBooks: [],
+                            errorMessage: 'Book not found'
+                        });
                     } else {
-                        this.setState({searchedBooks : searchedBooks})
+                        this.setState({
+                            searchedBooks : searchedBooks,
+                            errorMessage: ''
+                        })
                     }
         })
         } else {
@@ -63,6 +69,7 @@ this.setState({ searchedBooks: [] });
                             ))
                         }
                     </ol>
+                    <h1>{this.state.errorMessage}</h1>
                 </div>
             </div>
         );
