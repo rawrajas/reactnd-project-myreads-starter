@@ -57,6 +57,6 @@ Original starter template can be found here:
 
 https://github.com/udacity/reactnd-project-myreads-starter
 
-##License
+## License
 
 © Jaime A. Araujo
